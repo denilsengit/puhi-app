@@ -95,3 +95,74 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    // Toggle Sidebar Mobile
+    const sidebar = document.getElementById("mainSidebar");
+    const toggleBtn = document.getElementById("sidebarToggle");
+    toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+    });
+
+    // Chart 1: Monthly Growth (Line Chart)
+    const ctxGrowth = document
+        .getElementById("monthlyGrowthChart")
+        .getContext("2d");
+    new Chart(ctxGrowth, {
+        type: "line",
+        data: {
+            labels: ["Jul", "Agu", "Sep", "Okt", "Nov", "Des", "Jan", "Feb"],
+            datasets: [
+                {
+                    label: "Jemaat Baru",
+                    data: [45, 60, 55, 80, 70, 110, 95, 124],
+                    borderColor: "#4361ee",
+                    borderWidth: 3,
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: "rgba(67, 97, 238, 0.05)",
+                    pointRadius: 4,
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 2,
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: {
+                    grid: { color: "#f1f5f9", drawBorder: false },
+                    ticks: { color: "#94a3b8" },
+                },
+                x: { grid: { display: false }, ticks: { color: "#94a3b8" } },
+            },
+        },
+    });
+
+    // Chart 2: Gender (Doughnut Chart)
+    const ctxGender = document
+        .getElementById("genderPieChart")
+        .getContext("2d");
+    new Chart(ctxGender, {
+        type: "doughnut",
+        data: {
+            labels: ["Laki-laki", "Perempuan"],
+            datasets: [
+                {
+                    data: [54, 46],
+                    backgroundColor: ["#4361ee", "#f72585"],
+                    borderWidth: 5,
+                    borderColor: "#fff",
+                    borderRadius: 5,
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: "80%",
+            plugins: { legend: { display: false } },
+        },
+    });
+});
