@@ -18,32 +18,37 @@
 
       <small class="nav-section-title">Menu Utama</small>
 
-      <a href="{{ route('dashboard') }}" class="nav-link active">
-        <i class="bi bi-grid-fill"></i>
-        <span>Ringkasan</span>
-      </a>
+<a href="{{ route('dashboard') }}" 
+   class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+    <i class="bi bi-grid-fill"></i>
+    <span>Ringkasan</span>
+</a>
 
-      <a href="#" class="nav-link">
-        <i class="bi bi-people-fill"></i>
-        <span>Data Umat</span>
-      </a>
+<a href="{{ route('data-umat') }}" 
+   class="nav-link {{ request()->routeIs('data-umat') ? 'active' : '' }}">
+    <i class="bi bi-people-fill"></i>
+    <span>Data Umat</span>
+</a>
 
-      <a href="#" class="nav-link">
-        <i class="bi bi-map-fill"></i>
-        <span>Zonasi Wilayah</span>
-      </a>
+<a href="{{ route('zonasi-wilayah') }}" 
+   class="nav-link {{ request()->routeIs('zonasi-wilayah') ? 'active' : '' }}">
+    <i class="bi bi-map-fill"></i>
+    <span>Zonasi Wilayah</span>
+</a>
 
       <small class="nav-section-title">Laporan</small>
 
-      <a href="#" class="nav-link">
-        <i class="bi bi-file-earmark-bar-graph-fill"></i>
-        <span>Statistik Bulanan</span>
-      </a>
+      <a href="{{ route('statistik-bulanan') }}" 
+   class="nav-link {{ request()->routeIs('statistik-bulanan') ? 'active' : '' }}">
+<i class="bi bi-file-earmark-bar-graph-fill"></i>
+    <span>Statistik Bulanan</span>
+</a>
 
-      <a href="#" class="nav-link">
-        <i class="bi bi-archive-fill"></i>
-        <span>Arsip Data</span>
-      </a>
+      <a href="{{ route('arsip-data') }}" 
+   class="nav-link {{ request()->routeIs('arsip-data') ? 'active' : '' }}">
+<i class="bi bi-archive-fill"></i>
+    <span>Arsip Data</span>
+</a>
 
     </div>
   </div>
